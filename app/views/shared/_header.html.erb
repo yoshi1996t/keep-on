@@ -1,0 +1,29 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla&display=swap" rel="stylesheet">
+
+  <div class='header-page-contents'>
+      <div class='nav'>
+        <ul class='lists-right'>
+          <% if user_signed_in? %>
+                <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %></li>
+          <% else %>
+                <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
+                <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up" %></li>
+          <% end %> 
+        </ul>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="main-header-top">
+        <p>SUCCESS IS NOT FINAL,</p>
+        <p>FAILURE IS NOT FATAL</p>
+      </div>
+      <div class="main-header-bottom">
+        <p>「 成功が最終的なことではない。失敗は致命的なことではない。</p>
+        <p>続ける勇気こそ価値があることだ。」</p>
+      </div>
+    </div>
+</header>
